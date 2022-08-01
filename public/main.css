@@ -1,0 +1,662 @@
+/* html {
+    background: #a5a4ce;
+    font-family: System, monospace;
+    font-size: 10pt;
+  }
+
+  
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  span:after {
+    content: " ";
+    display: inline-block;
+    width: 2%;
+  }
+  
+  fieldset {
+    float: left;
+    padding-right: 18px;
+  }
+  
+  #logo {
+    font-family: "Times";
+    font-size: 20pt;
+  }
+
+ 
+  .window {
+    position: relative;
+    cursor: default;
+    margin: 2em auto;
+    width: 80%;
+    background: #3465a4;
+    color: white;
+    border: 6px double white;
+    padding: 1em;
+    box-shadow: 0 0 0 3px #3465a4, 1em 1em 3px 0 rgba(0, 0, 0, 0.5);
+    max-width: 640px;
+  }
+  
+  .window.white {
+    background: silver;
+    color: black;
+    border-color: white;
+    box-shadow: 0 0 0 3px silver, 1em 1em 3px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  .window.half-width {
+    width: 50%;
+  }
+  
+  .window h1 {
+    text-align: center;
+  }
+  
+  .window.blue p {
+    color: white;
+    text-shadow: 0 0 2px white;
+  }
+  
+  button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button,
+  .button,
+  .button:link {
+    display: inline-block;
+    font-weight: bolder;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    background: green;
+    padding: 0 1em;
+    box-shadow: 0.5em 0.5em 3px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: 0.2s all ease-in;
+    border: 1px outset green;
+  }
+  
+  button.full-width,
+  .button.full-width {
+    display: block;
+    text-align: center;
+  }
+  
+  button:before,
+  .button:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    /*background: rgba(255,255,0,.5); /* DEBUG CLICK AREA */
+
+
+/* button:hover,
+  .button:active,
+  .button:focus,
+  .button:hover {
+    transform: translate3d(0.25em, 0.25em, 10em);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    background: limegreen;
+  }
+  
+  button:hover:before,
+  .button:hover:before,
+  button:focus:before,
+  .button:focus:before {
+    top: -1em;
+    left: -1em;
+  }
+  
+  .button.pressed {
+    box-shadow: none;
+    left: 0.25em;
+    top: 0.25em;
+    margin-right: 0.25em;
+    background: gray;
+    border: 1px outset #707070;
+  }
+  
+  button:disabled {
+    transform: translate3d(0.25em, 0.25em, 10em);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    background: gray;
+    border: 1px outset #707070;
+  }
+  
+  button:first-letter,
+  .button:first-letter {
+    color: yellow;
+  }
+  
+  button#btn-transfer {
+    margin-top: 20px;
+  }
+  
+  input,
+  textarea {
+    background: blue;
+    color: aqua;
+    width: 100%;
+    max-width: 100%;
+    font-size: 12pt;
+  }
+  input:disabled {
+    background: #505070;
+    color: #d0d0d0;
+    border: 2px solid #505070;
+  }
+  
+  .window > textarea {
+    width: 100%;
+    border: none;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .trade-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  div .transfer {
+    display: table;
+    margin: auto;
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@100;200;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+  
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  
+  .scrollInd {
+  
+    align-self: flex-start;
+    justify-self: center;
+    margin: 15px 0px;
+    font-family: 'Rokkitt';
+    letter-spacing: 2px;
+    padding: 10px;
+  
+    width: 30%;
+  
+    border-radius: 20px;
+  
+    color: #e4efe9;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-90deg);
+  
+    position: relative;
+    top: -350px;
+  
+  }
+  
+  .tricon {
+    vertical-align: bottom;
+    align-self: flex-end;
+  }
+  
+  .arrow {
+    margin: 0px 6px;
+    font-size: 3rem;
+    color: #4c6f5b;
+  
+  }
+  
+  .arrow:hover~.circle {
+    color: #4c6f5b;
+  
+  
+  }
+  
+  .circle {
+    font-size: 2rem;
+    color: #ff5251;
+  
+  
+    margin: 0px 6px;
+  }
+  
+  .introdiv {
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .transactionSection {
+    background-image: linear-gradient(black, #48644c);
+  
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  
+  .transferSection {
+    background-image: linear-gradient(#48644c, #ff5251);
+  
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  
+  }
+  
+  .introsection {
+    background-image: linear-gradient(#ff5251, black);
+  
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .hasnain{
+      
+      -webkit-filter: drop-shadow(0px 5px 5px #222  );
+    filter: drop-shadow(0px 5px 5px #222 );
+  }
+  
+  .navbar {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 3rem;
+    box-sizing: border-box;
+  
+  
+  
+  }
+  
+  
+  .icon :hover {
+  
+    color: #a62727fc;
+  
+  }
+  
+  .logo {
+    -webkit-filter: drop-shadow(0px 5px 5px black);
+    filter: drop-shadow(0px 5px 5px black);
+  }
+  
+  .coin {
+    -webkit-filter: drop-shadow(0px 5px 5px #222);
+    filter: drop-shadow(0px 5px 5px #222);
+  }
+  
+  .logo:hover {
+    transform: rotate(20deg);
+  
+  }
+  
+  .introsection h1 {
+    font-size: 100px;
+    font-weight: 900;
+    font-family: 'Rokkitt', serif;
+  
+    color: whitesmoke;
+  
+  }
+  
+  .spanText {
+    transform: translate(-50%, -50%);
+  
+    letter-spacing: 5px;
+  
+    font-weight: bold;
+    background-image: linear-gradient(to right,
+        #874a00 0,
+        #ffeb00 22%,
+        #ffff02 45%,
+        #ffff00 50%,
+        #ffb000 55%,
+        #ffeb00 78%,
+        #874a00 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+  
+  .navbar h2 {
+  
+    font-size: 2rem;
+    font-family: 'Rokkitt', serif;
+    color: whitesmoke;
+  }
+  
+  #btn-payout {
+    font-family: 'Rokkitt', serif;
+    font-size: 1rem;
+  
+  
+    padding: 10px;
+    font-size: 1.5 rem;
+    border-radius: 20px;
+    border: none;
+  
+  }
+  
+  #btn-payout:hover {
+    font-family: 'Rokkitt', serif;
+    font-size: 1rem;
+  
+    background-color: #4c6f5b;
+    color: #e4efe9;
+    border: none;
+    padding: 10px;
+    font-size: 1.5 rem;
+    border-radius: 20px;
+  }
+  
+  .balanceText {
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  .faucet {
+    height: 40%;
+    font-family: 'Rokkitt';
+    letter-spacing: 2px;
+    padding: 10px;
+    box-shadow: 5px 10px #4c6f5b;
+    width: 50%;
+    justify-content: space-evenly;
+  
+    border-radius: 20px;
+    border: 2px solid #4c6f5b;
+    color: #e4efe9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0px;
+  
+  }
+  
+  .balance {
+    align-items: center;
+    margin: 15px 0px;
+    font-family: 'Rokkitt';
+    letter-spacing: 2px;
+    padding: 10px;
+    box-shadow: 5px 10px #4c6f5b;
+    width: 50%;
+  
+    border-radius: 20px;
+    border: 2px solid #4c6f5b;
+    color: #e4efe9;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .transfer {
+    align-items: center;
+    margin: auto 0px;
+    font-family: 'Rokkitt';
+    letter-spacing: 2px;
+    padding: 10px;
+    box-shadow: 5px 10px #4c6f5b;
+    width: 50%;
+  
+  
+    border-radius: 20px;
+    border: none;
+    color: #4c6f5b;
+    background-color: #e4efe9;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  #balance-principal-id {
+    caret-color: #ff5251;
+    width: 90%;
+    color: "#e4efe9";
+    padding: 10px;
+    border-radius: 20px;
+  
+  }
+  
+  .transferInput {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #4c6f5b;
+    color: #e4efe9;
+    border: none;
+    caret-color: #ff5251;
+    width: 200px;
+    color: "#e4efe9";
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+  .transferInput:active {
+    border: none;
+  
+  }
+  
+  #btn-transfer {
+    font-family: 'Rokkitt', serif;
+    font-size: 1rem;
+    color: #e4efe9;
+    width: 100px;
+  
+  
+    padding: 10px;
+    font-size: 1.5 rem;
+    border-radius: 20px;
+    border: none;
+    background-color: #4c6f5b;
+  
+  }
+  
+  #btn-transfer:hover {
+  
+    color: #4c6f5b;
+  
+  
+    background-color: #e4efe9;
+  
+  }
+  
+  #btn-balance {
+    font-family: 'Rokkitt', serif;
+    font-size: 1rem;
+  
+  
+    padding: 10px;
+    font-size: 1.5 rem;
+    border-radius: 20px;
+    border: none;
+  
+  }
+  
+  #btn-balance:hover {
+    font-family: 'Rokkitt', serif;
+    font-size: 1rem;
+  
+    background-color: #4c6f5b;
+    color: #e4efe9;
+    border: none;
+    padding: 10px;
+    font-size: 1.5 rem;
+    border-radius: 20px;
+  }
+  
+  
+  
+  
+  .footerDiv {
+    background-color: #222;
+    color: #e4efe9;
+    border-top: 10px solid #4c6f5b;
+    height: 4rem;
+    padding: 2rem;
+    padding-bottom: 6%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  
+  }
+  
+  .footerText {
+    font-family: 'Rokkitt', serif;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  
+  .aboutSec{
+    padding: 25% 10%;
+    
+    box-sizing: border-box;
+    background-image: linear-gradient(#13547a , #80d0c7
+    );
+    font-family: 'Rokkitt', serif;
+  color: #e4efe9;
+    height: 100vh;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
+  }
+  .aboutSec h1{
+    font-family: 'Rokkitt', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    
+  
+    letter-spacing: 5px;
+  
+   
+    background-image: linear-gradient(to right  ,#4c6f5b , #ff5251);
+    color: transparent;
+    -webkit-background-clip: text;
+  
+    -webkit-filter: drop-shadow(6px 5px 5px,#4c6f5b );
+    filter: drop-shadow(6px 5px 5px #4c6f5b);
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+  .aboutSec h6{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+   letter-spacing: 4px;
+   text-align: center;
+   padding: 0px 10%;
+  }
+  
+  .highlight{
+    color: #4c6f5b;
+  }
+  
+  @media only screen and (max-width: 620px) {
+  
+    .transferSection {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .transfer {
+      width: 100%;
+      height: 90rem !important;
+      justify-content: space-between;
+   
+      
+    }
+  .transferInput{
+    width: 150%
+  }
+    .arrow {
+      display: none;
+    }
+  
+  
+    .tricon{
+      display: none;
+    }
+  
+    .accbox{
+     
+      display: flex;
+      flex-direction: column !important;
+      align-items: center;
+  
+    }
+    .circle {
+      display: none;
+    }
+  
+    .faucet {
+      width: 100%
+    }
+  
+    .balance {
+      width: 100%
+    }
+  .coin{
+    justify-content: flex-end !important;
+  }
+    .introdiv {
+      flex-direction: column-reverse;
+      height: 100vh;
+      width: 100%
+    }
+  .hasnain{
+    margin-top: 10%;
+    height: 60px;
+    width: 60px;
+  }
+    .footerText{
+      font-size: 1rem;
+    }
+  
+    .introText2 {
+      position: absolute;
+      top: 50%;
+      text-align: center;
+      font-size: 60px !important;
+  
+    }
+  }
