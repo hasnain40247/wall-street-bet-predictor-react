@@ -18,7 +18,7 @@ function AnalysisSection() {
         setLoading(1)
         setDisabled(1)
 
-        fetch("/members").then(
+        fetch("http://wallstreet-bets-api.herokuapp.com/members").then(
             res => res.json()
         ).then(
             data => {
