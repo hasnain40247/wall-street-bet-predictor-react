@@ -18,7 +18,7 @@ function Historic() {
         setLoading(1)
         setDisabled(1)
 
-        fetch("http://wallstreet-bets-api.herokuapp.com/histanal").then(
+        fetch("/histanal").then(
             res => res.json()
         ).then(
             data => {

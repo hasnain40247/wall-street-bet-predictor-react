@@ -14,7 +14,7 @@ function IndivStock() {
         setLoading(1)
         setDisabled(1)
 
-        fetch("http://wallstreet-bets-api.herokuapp.com/indivstock").then(
+        fetch("/indivstock").then(
             res => res.json()
         ).then(
             data => {
