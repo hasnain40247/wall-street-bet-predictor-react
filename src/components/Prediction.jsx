@@ -20,7 +20,7 @@ function Prediction() {
         setLoading(1)
         setDisabled(1)
 
-        fetch("/prediction").then(
+        fetch("http://wallstreet-bets-api.herokuapp.com/prediction").then(
             res => res.json()
         ).then(
             data => {
@@ -43,7 +43,7 @@ function Prediction() {
         setDisabled(1)
         setselect(symbol)
 
-        fetch("/predict?symbol=" + symbol).then(
+        fetch("http://wallstreet-bets-api.herokuapp.com/predict?symbol=" + symbol).then(
             res => res.json()
         ).then(
             data => {
