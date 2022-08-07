@@ -1,4 +1,36 @@
-# Getting Started with Create React App
+# Check The Website Out On Vercel
+
+<a href="https://wallstreet-reactapp.vercel.app">website Url</a>
+
+This website was made using <ins>React JS, three.js and Flask</ins>. The website uses concepts of web crawling to accure a collection of trending and daily discussion posts from popular stock discussion subreddits such as r/wallstreetbets and r/stocks. The comments are then scraped through to get the mentions of stocks and thus their <ins>sentiments using nltk's vader sentiment analysis</ins> using a predefined vocabulary of modern slangs and internet language. The financial data is then collected using yahoo finance and is saved locally on the flask server as a dataframe. The financial timeseries dataset is then used to predict the future stock prices using on-line training of an <ins>LSTM</ins>.    
+
+
+
+
+
+
+
+# Project Screenshots
+
+### Home
+![image](https://user-images.githubusercontent.com/52504037/183292799-bf7d25a2-bf2b-4b5c-917e-2039908523e6.png)
+
+![image](https://user-images.githubusercontent.com/52504037/183292823-fcbd61ea-8a1b-464c-8227-f842da8e568e.png)
+
+![image](https://user-images.githubusercontent.com/52504037/183292838-17b9b71b-125e-455c-8ea8-4949e640b105.png)
+
+![image](https://user-images.githubusercontent.com/52504037/183292854-a1f694fb-0338-4e67-83e2-3acbf3d38070.png)
+
+![image](https://user-images.githubusercontent.com/52504037/183292875-eda6ed85-ef56-4dc8-aea2-5f48a02df750.png)
+
+![image](https://user-images.githubusercontent.com/52504037/183292921-36fce63f-bfb7-4100-a64d-417810f0d757.png)
+
+![image](https://user-images.githubusercontent.com/52504037/183292930-beacac34-6b81-405a-af8d-6926695463ef.png)
+
+### Stock Prediction Using LSTM
+![image](https://user-images.githubusercontent.com/52504037/183292941-327e2e1d-4363-4796-a7ee-6e9fccc36fcc.png)
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
