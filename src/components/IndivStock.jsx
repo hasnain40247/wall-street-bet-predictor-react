@@ -4,26 +4,57 @@ import { BsArrowDownCircleFill } from "react-icons/bs";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Circles } from 'react-loader-spinner'
 import Plot from "react-plotly.js"
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 function IndivStock() {
     const [loading, setLoading] = useState(0)
     const [disabled, setDisabled] = useState(0)
     const [data, setData] = useState({})
+    const [datalist, setDataList] = useState([])
+
 
     const handleClick = () => {
+      
         setLoading(1)
         setDisabled(1)
+      
+       fetch("/indivstock").then(
+        res => res.json()
+    ).then(
+        data => {
+            setData(data)
+            console.log(data)
+            const dl=[]
 
-        fetch("http://wallstreet-bets-api.herokuapp.com/indivstock").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
+            Object.keys(data["plot_json"]).map((key, index) => {
+
+        
+                dl.push(   <Plot
+                    data={plotBearish({
+                        stock_data: JSON.parse(String(data["plot_json"][key]))["data"]
+                    })}
+                    layout={JSON.parse(String(data["plot_json"][key]))["layout"]}
+                />)
+
+            
+                
 
 
-                setLoading(0)
-            }
-        )
+            })
+
+            setDataList(dl)
+
+
+
+
+            
+
+            setLoading(0)
+        }
+    )
+
+     
 
     }
 
@@ -105,39 +136,12 @@ function IndivStock() {
 
                             <h3 className="plotTitle">Financial Data</h3>
 
-                            <div style={{
-                                boxSizing: "border-box",
+                       
+    <AliceCarousel paddingLeft={350} autoPlay autoPlayDirection="right" autoPlayInterval={3000} infinite  mouseTracking  items={datalist} />
 
-                                alignItems: "center",
-                                display: "inline-block",
-                                justifyContent: "space-between",
-                                margin: "3rem 0px"
-                            }}>
-
-                                {Object.keys(data["plot_json"]).map((key, index) => {
-
-                                    console.log(JSON.parse(String(data["plot_json"][key]))["data"]);
-
-                                    return (
+                              
 
 
-                                        <Plot
-                                            data={plotBearish({
-                                                stock_data: JSON.parse(String(data["plot_json"][key]))["data"]
-                                            })}
-                                            layout={JSON.parse(String(data["plot_json"][key]))["layout"]}
-                                        />
-
-                                    )
-
-                                })
-
-
-
-
-                                }
-
-                            </div>
 
 
 

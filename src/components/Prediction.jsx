@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Circles } from 'react-loader-spinner'
 import Plot from "react-plotly.js"
+import axios from "axios"
+
 
 function Prediction() {
     const [loading, setLoading] = useState(0)
@@ -16,20 +18,24 @@ function Prediction() {
 
 
 
-    const handleClick = () => {
+    const handleClick = async () => {
         setLoading(1)
         setDisabled(1)
 
-        fetch("http://wallstreet-bets-api.herokuapp.com/prediction").then(
+    
+        fetch("/prediction").then(
             res => res.json()
         ).then(
             data => {
                 setData(data)
-                console.log(data);
+                console.log(data)
 
                 setLoading(0)
             }
         )
+     
+
+     
 
     }
 
@@ -43,7 +49,7 @@ function Prediction() {
         setDisabled(1)
         setselect(symbol)
 
-        fetch("http://wallstreet-bets-api.herokuapp.com/predict?symbol=" + symbol).then(
+        fetch("/predict?symbol=" + symbol).then(
             res => res.json()
         ).then(
             data => {

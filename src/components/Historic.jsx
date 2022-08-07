@@ -4,6 +4,7 @@ import { BsArrowDownCircleFill } from "react-icons/bs";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Circles } from 'react-loader-spinner'
 
+
 import Plot from "react-plotly.js"
 function Historic() {
     const [loading, setLoading] = useState(0)
@@ -14,19 +15,25 @@ function Historic() {
 
 
 
-    const handleClick = () => {
+    const handleClick =  () => {
         setLoading(1)
         setDisabled(1)
-
-        fetch("http://wallstreet-bets-api.herokuapp.com/histanal").then(
+        
+        fetch("/histanal").then(
             res => res.json()
         ).then(
             data => {
                 setData(data)
+                console.log(data)
 
                 setLoading(0)
             }
         )
+     
+
+       
+
+    
 
     }
 

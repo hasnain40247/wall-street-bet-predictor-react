@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Circles } from 'react-loader-spinner'
@@ -14,20 +14,23 @@ function AnalysisSection() {
 
 
 
-    const handleClick = () => {
+    function handleClick(){
         setLoading(1)
         setDisabled(1)
 
-        fetch("http://wallstreet-bets-api.herokuapp.com/members").then(
+        fetch("/members").then(
             res => res.json()
         ).then(
             data => {
                 setData(data)
+                console.log(data)
                 console.log(JSON.parse(String(data["picks"])));
 
                 setLoading(0)
             }
         )
+
+
 
     }
 
@@ -167,9 +170,20 @@ function AnalysisSection() {
                             </div>
 
                             <h3 className="plotTitle">Frequency Of Stock Mentions</h3>
+
+                            <Plot
+                                data={[
+                                    JSON.parse(String(data["freq"]))["data"][0]
+                                ]}
+                                layout={
+
+                                    JSON.parse(String(data["freq"]))["layout"]
+
+                                }
+                            />
                             <h3 className="plotTitle">Top 10 Stocks</h3>
 
-                            
+
                             <Plot
                                 data={[
                                     JSON.parse(String(data["picks"]))["data"][0]
@@ -197,9 +211,9 @@ function AnalysisSection() {
 
                                     {
                                         width: 900, height: 500,
-                                        legend:{
-                                        bgcolor:"white",
-                                        
+                                        legend: {
+                                            bgcolor: "white",
+
                                         },
                                         paper_bgcolor: "rgb(0,0,0,0)", xaxis: {
                                             color: "white",
